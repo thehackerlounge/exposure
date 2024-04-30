@@ -62,15 +62,48 @@
 <body>
     <div class="container">
         <h1>Login</h1>
-        <form action="dashboard.html" method="GET">
+        <form id="loginForm">
             <label for="username">Username:</label>
-            <!-- E9AgCP3-->
-            <input type="text" id="username" name="username" placeholder="Enter username"><br>
+            <input type="text" id="username" name="username" placeholder="Enter username" required><br>
             <label for="password">Password:</label>
-            <!-- StFraoAKTjLShuz-->
-            <input type="password" id="password" name="password" placeholder="Enter password"><br>
+            <input type="password" id="password" name="password" placeholder="Enter password" required><br>
             <input type="submit" value="Login">
         </form>
     </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Encode the credentials
+            var encodedUsername = encodeCredentials(username);
+            var encodedPassword = encodeCredentials(password);
+
+            // Check if the encoded credentials match the predefined values
+            if (encodedUsername === "E9AgCP3" && encodedPassword === "StFraoAKTjLShuz") {
+                // If credentials match, redirect to dashboard.html
+                window.location.href = "dashboard.html";
+            } else {
+                // If credentials do not match, display an error message
+                alert("Invalid username or password. Please try again.");
+            }
+        });
+
+        // Function to encode the credentials
+        function encodeCredentials(str) {
+            // Custom encoding algorithm
+            // Modify this algorithm as needed for security purposes
+            var encodedStr = "";
+
+            for (var i = 0; i < str.length; i++) {
+                encodedStr += String.fromCharCode(str.charCodeAt(i) + 1);
+            }
+
+            return encodedStr;
+        }
+    </script>
 </body>
 </html>
