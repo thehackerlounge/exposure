@@ -94,33 +94,22 @@
                 <button onclick="executePayload()">Submit</button>
             </div>
             <!-- Container for dumped dummy code -->
-            <div id="dummyCodeContainer"></div>
+            <div id="Container"></div>
         </div>
     </div>
     <!-- Script to handle payload execution -->
     <script>
         function executePayload() {
             var payload = document.getElementById("inputField").value;
-            // Insert payload execution logic here
-            // For demonstration purposes, let's check if the payload is triggered
-            if (payload !== "") {
+            // Check if the payload triggers the alert
+            if (payload === "alert('Success')") {
+                // Trigger alert
+                eval(payload);
                 // Redirect to register.html
                 window.location.href = "code.html";
+            } else {
+                alert("Invalid payload!");
             }
-        }
-
-        // Dumping dummy code upon registration
-        window.onload = function() {
-            // Dummy PHP code to be dumped
-            var dummyCode = `<?php
-                // Dummy PHP code
-                // Add your PHP code here
-            ?>`;
-            // Create a div element to hold the dumped code
-            var dummyCodeDiv = document.createElement("div");
-            dummyCodeDiv.innerHTML = dummyCode;
-            // Append the div to the container
-            document.getElementById("dummyCodeContainer").appendChild(dummyCodeDiv);
         }
     </script>
 </body>
