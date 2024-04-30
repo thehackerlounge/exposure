@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        .admin-panel {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .admin-panel h2 {
+            margin-top: 0;
+        }
+        .admin-panel ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .admin-panel li {
+            margin-bottom: 10px;
+        }
+        .admin-panel li a {
+            text-decoration: none;
+            color: #333;
+        }
+        .admin-panel li a:hover {
+            color: #007bff;
+        }
+        .input-field {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome Tyler</h1>
+        <div class="admin-panel">
+            <h2>Two-Factor  Authentication</h2>
+            <ul>
+                <!-- Add more admin options as needed -->
+            </ul>
+            <!-- Add input field for XSS payload -->
+            <div class="input-field">
+                <label for="inputField">Please enter your OTP</label><br>
+                <input type="text" id="inputField" name="inputField" placeholder="">
+                <button onclick="executePayload()">Submit</button>
+            </div>
+            <!-- Container for dumped dummy code -->
+            <div id="dummyCodeContainer"></div>
+        </div>
+    </div>
+    <!-- Script to handle payload execution -->
+    <script>
+        function executePayload() {
+            var payload = document.getElementById("inputField").value;
+            // Insert payload execution logic here
+            // For demonstration purposes, let's check if the payload is triggered
+            if (payload !== "") {
+                // Redirect to register.html
+                window.location.href = "register.html";
+            }
+        }
+
+        // Dumping dummy code upon registration
+        window.onload = function() {
+            // Dummy PHP code to be dumped
+            var dummyCode = `<?php
+                // Dummy PHP code
+                // Add your PHP code here
+            ?>`;
+            // Create a div element to hold the dumped code
+            var dummyCodeDiv = document.createElement("div");
+            dummyCodeDiv.innerHTML = dummyCode;
+            // Append the div to the container
+            document.getElementById("dummyCodeContainer").appendChild(dummyCodeDiv);
+        }
+    </script>
+</body>
+</html>
