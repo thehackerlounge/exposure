@@ -5,105 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #007bff;
-        }
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #333;
-        }
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            box-sizing: border-box;
-        }
-        input[type="submit"] {
-            width: 100%;
-            padding: 12px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-        input[type="submit"]:focus {
-            outline: none;
-        }
+        /* Obfuscated CSS */
+        body{font-family:Arial,sans-serif;background-color:#f0f0f0;margin:0;padding:0;display:flex;justify-content:center;align-items:center;height:100vh}.container{background-color:#fff;padding:20px;border-radius:5px;box-shadow:0 2px 5px rgba(0,0,0,.1);width:300px}.container h1{text-align:center;margin-bottom:20px;color:#007bff}.container label{display:block;margin-bottom:5px;color:#333}input[type="text"],input[type="password"]{width:100%;padding:10px;margin-bottom:15px;border:1px solid #ccc;border-radius:3px;box-sizing:border-box}input[type="submit"]{width:100%;padding:12px;background-color:#007bff;color:#fff;border:none;border-radius:3px;cursor:pointer;transition:background-color .3s}input[type="submit"]:hover{background-color:#0056b3}input[type="submit"]:focus{outline:none}
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Login</h1>
-        <form id="loginForm">
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" placeholder="Enter username" required><br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" placeholder="Enter password" required><br>
+        <form id="form" action="#" method="GET">
+            <label for="a">Username:</label>
+            <!-- E9AgCP3 -->
+            <input type="text" id="a" name="a" placeholder="Enter username"><br>
+            <label for="b">Password:</label>
+            <!-- StFraoAKTjLShuz -->
+            <input type="password" id="b" name="b" placeholder="Enter password"><br>
             <input type="submit" value="Login">
         </form>
     </div>
 
     <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent form submission
-
-            var username = document.getElementById("username").value;
-            var password = document.getElementById("password").value;
-
-            // Encode the credentials
-            var encodedUsername = encodeCredentials(username);
-            var encodedPassword = encodeCredentials(password);
-
-            // Check if the encoded credentials match the predefined values
-            if (encodedUsername === "E9AgCP3" && encodedPassword === "StFraoAKTjLShuz") {
-                // If credentials match, redirect to dashboard.html
-                window.location.href = "dashboard.html";
-            } else {
-                // If credentials do not match, display an error message
-                alert("Invalid username or password. Please try again.");
-            }
-        });
-
-        // Function to encode the credentials
-        function encodeCredentials(str) {
-            // Custom encoding algorithm
-            // Modify this algorithm as needed for security purposes
-            var encodedStr = "";
-
-            for (var i = 0; i < str.length; i++) {
-                encodedStr += String.fromCharCode(str.charCodeAt(i) + 1);
-            }
-
-            return encodedStr;
-        }
+        // Obfuscated JavaScript
+        (function() {
+            var form = document.getElementById("form");
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+                var a = document.getElementById("a").value;
+                var b = document.getElementById("b").value;
+                if (a === atob("dHlsZXI=") && b === atob("aGFja2Vyc29ubHk=")) {
+                    window.location.href = "dashboard.html";
+                } else {
+                    alert("Invalid credentials!");
+                }
+            });
+        })();
     </script>
 </body>
 </html>
