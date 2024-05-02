@@ -99,18 +99,21 @@
     </div>
     <!-- Script to handle payload execution -->
     <script>
-        function executePayload() {
-            var payload = document.getElementById("inputField").value;
-            // Check if the payload triggers the alert
-            if (payload === "alert('Success')") {
-                // Trigger alert
-                eval(payload);
-                // Redirect to register.html
-                window.location.href = "code.html";
-            } else {
-                alert("Invalid payload!");
-            }
+       <script>
+    function executePayload() {
+        var payload = document.getElementById("inputField").value;
+        // Check if the payload triggers the alert
+        if (payload === "alert('Success')") {
+            // Trigger alert
+            eval(payload);
+            // Redirect to register.html
+            window.location.href = String.fromCharCode(99, 111, 100, 101, 46, 104, 116, 109, 108);
+        } else {
+            alert(String.fromCharCode(73, 110, 118, 97, 108, 105, 100, 32, 112, 97, 121, 108, 111, 97, 100, 33));
         }
+    }
+</script>
+
     </script>
 </body>
 </html>
